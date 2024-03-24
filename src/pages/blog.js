@@ -22,7 +22,7 @@ const BlogPage = ({ data }) => {
               </Link>
             </h2>
             <p>Posted: {node.frontmatter.date}</p>
-            <p>{node.excerpt}</p>
+            {/* <p>{node.excerpt}</p> */}
           </article>
         ))}
       </ul>
@@ -33,14 +33,7 @@ const BlogPage = ({ data }) => {
             <h2>
               <Link to={`/blog/${post._id}`}>{post.title}</Link>
             </h2>
-            <p>Posted: {post.createdAt}</p>
-            <p>{post.content}</p>
-            <p>
-              Author:{" "}
-              <Link to={`/authors/${post.author._id}`}>
-                {post.author.username}
-              </Link>
-            </p>
+            <p>Posted: {post.formattedDate}</p>
           </article>
         ))}
       </ul>
